@@ -1,2 +1,3 @@
+adsorption-file-parser == 0.2.8
 pygaps
 tifffile

@@ -47,7 +47,7 @@ def integrate_TCD_chromatogram(chrom_path,compound_frame_TCD):
         chrom_bl = chromatogram - chromatogram.iloc[chromatogram.index.get_loc(compound_frame_TCD['baseline_point'].loc[i])] #baseline_correction at selected point
         x = chrom_bl.index[(chrom_bl.index > compound_frame_TCD['lower_bound'].loc[i]) & (chrom_bl.index < compound_frame_TCD['upper_bound'].loc[i])]
         y = chrom_bl['Value (mV)'].loc[x]
-        integrals.append(integrate.trapz(y,x))
+        integrals.append(integrate.trapezoid(y,x))
     return integrals, chromatogram
 
 def integrate_TCD_chromatogram_new(chrom_path,compound_frame_TCD):
@@ -65,7 +65,7 @@ def integrate_TCD_chromatogram_new(chrom_path,compound_frame_TCD):
         bl_slope = (y.iloc[-1] - y.iloc[0])/(x[-1] - x[0])
         y = y - (bl_slope*(x-x[0])+y.iloc[0])
 
-        integrals.append(integrate.trapz(y,x))
+        integrals.append(integrate.trapezoid(y,x))
     return integrals, chrom_bl
 
 
@@ -127,10 +127,10 @@ def process_chromatogram(chrom_path,peaklist_path,time):
     integrals = []
     labels = peaklist.index.tolist()
     for i in range(len(peaklist)):
-        integrals.append(integrate.trapz(chromatogram['bl_substracted'][(chromatogram.index>peaklist['lower_bound'].iloc[i]) & (chromatogram.index<peaklist['upper_bound'].iloc[i])],chromatogram.index[(chromatogram.index>peaklist['lower_bound'].iloc[i]) & (chromatogram.index<peaklist['upper_bound'].iloc[i])]))
+        integrals.append(integrate.trapezoid(chromatogram['bl_substracted'][(chromatogram.index>peaklist['lower_bound'].iloc[i]) & (chromatogram.index<peaklist['upper_bound'].iloc[i])],chromatogram.index[(chromatogram.index>peaklist['lower_bound'].iloc[i]) & (chromatogram.index<peaklist['upper_bound'].iloc[i])]))
     # append an integral of the total chromatogram
     labels.append('total')
-    integrals.append(integrate.trapz(chromatogram['bl_substracted'],chromatogram.index))
+    integrals.append(integrate.trapezoid(chromatogram['bl_substracted'],chromatogram.index))
     integral_frame_pA = pd.DataFrame({time: integrals}, index=labels)
     return chromatogram, integral_frame_pA
 
@@ -158,7 +158,7 @@ def get_indiv_integrals(integral_frame_FID_mol, inj_time_timelist):
     '''
     determines the masses of the individual compounds asusming a molar mass of 14 g/mol per carbon atom
     '''
-    integral = integrate.trapz(integral_frame_FID_mol,inj_time_timelist)
+    integral = integrate.trapezoid(integral_frame_FID_mol,inj_time_timelist)
     integral_frame = pd.DataFrame(integral, columns=['molar'], index=integral_frame_FID_mol.index)
     integral_frame['mass'] = integral_frame['molar']*14/1000 
     return integral_frame
@@ -167,7 +167,7 @@ def get_TCD_masses(integral_frame_TCD_mol, inj_time_timelist):
     #converts molar flows to masses
     
     dfT=integral_frame_TCD_mol.T.fillna(0)
-    integral = integrate.trapz(dfT,inj_time_timelist)
+    integral = integrate.trapezoid(dfT,inj_time_timelist)
     integral_frame = pd.DataFrame(integral, columns=['molar_TCD'], index=dfT.index)
     integral_frame['mass_TCD'] = integral_frame['molar_TCD']*[44/3,42/3,2]/1000
     return integral_frame

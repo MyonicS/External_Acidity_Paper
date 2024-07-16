@@ -82,7 +82,7 @@ import tifffile
 def normalize_array(df_array):
     '''Normalizes the Volume of a 2D chromatogram to 1'''
     arrray_for_integral = np.array(df_array)
-    integral_non_norm = integrate.trapz(integrate.trapz(arrray_for_integral, axis=0), axis=0)
+    integral_non_norm = integrate.trapezoid(integrate.trapezoid(arrray_for_integral, axis=0), axis=0)
     df_array_norm = df_array/integral_non_norm
     return df_array_norm
     
@@ -90,8 +90,8 @@ def integrate_masked(df_norm_array, maskpath):
     mask =  tifffile.imread(maskpath)/255 # if the mask is binary no need to divide by 255
     df_norm_array_masked  = df_norm_array*mask
     array_norm_mask_diarom = np.array(df_norm_array_masked)
-    row_integrated = integrate.trapz(array_norm_mask_diarom, axis=0)
-    column_integrated = integrate.trapz(row_integrated, axis=0)
+    row_integrated = integrate.trapezoid(array_norm_mask_diarom, axis=0)
+    column_integrated = integrate.trapezoid(row_integrated, axis=0)
     return column_integrated
     
 

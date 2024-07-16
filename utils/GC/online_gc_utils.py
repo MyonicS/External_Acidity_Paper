@@ -65,16 +65,16 @@ def integrate_peaks(frame, Peaks_channel2,Peaks_TCD,Peaks_channel1):
     integrals_list = []
     for i in range(0,len(Peaks_channel2)):
         #ideantify peaks and valleys in the range of the peak
-        integral = integrate.trapz(df[(df.index > Peaks_channel2[i][1][0]) & (df.index < Peaks_channel2[i][1][1])])
+        integral = integrate.trapezoid(df[(df.index > Peaks_channel2[i][1][0]) & (df.index < Peaks_channel2[i][1][1])])
         integrals_list.append(integral)
     df_TCD = frame['TCD']
     for i in range(0,len(Peaks_TCD)):
-        integral = integrate.trapz(df_TCD[(df_TCD.index > Peaks_TCD[i][1][0]) & (df_TCD.index < Peaks_TCD[i][1][1])])
+        integral = integrate.trapezoid(df_TCD[(df_TCD.index > Peaks_TCD[i][1][0]) & (df_TCD.index < Peaks_TCD[i][1][1])])
         integrals_list.append(integral)
 
     df_FIDL = frame['FID_L']
     for i in range(0,len(Peaks_channel1)):
-        integral = integrate.trapz(df_FIDL[(df_FIDL.index > Peaks_channel1[i][1][0]) & (df_FIDL.index < Peaks_channel1[i][1][1])])
+        integral = integrate.trapezoid(df_FIDL[(df_FIDL.index > Peaks_channel1[i][1][0]) & (df_FIDL.index < Peaks_channel1[i][1][1])])
         integrals_list.append(integral)
 
 

@@ -83,7 +83,7 @@ def get_TCD_flows(filepath, compound_frame_TCD):
     init = float(meta_frame['value']['GC start time:'])  # start time of filling the loops (min)
     inj_time = float(meta_frame['value']['Time sampling loop: [min]']) # time of recording of 1 injection in min
 
-    filelist_TCD = glob.glob(filepath+'*TCD.txt*')
+    filelist_TCD = sorted(glob.glob(filepath+'*TCD.txt*'))
     filelist_TCD.sort(key=len)
     integral_list = []
     #getting the integrals
@@ -186,8 +186,9 @@ def get_coke_amount(homedir, cat_mass = 0.625):
         TGA_list = glob.glob(TGA_dir + '*.txt')
         TGA_file = TGA_list[0]
     except:
-        print('No TGA file found for ' + homedir)
-        return 'No TGA file found'
+        TGA_dir = homedir + '/TGA_Burnoff/'
+        TGA_list = glob.glob(TGA_dir + '*.txt')
+        TGA_file = TGA_list[0]
     names = ['Blank', 'Time', 'Unsubtracted weight', 'Baseline weight',
         'Program Temp.','Sample Temp.', 'Sample Purge Flow',
         'Balance purge flow']

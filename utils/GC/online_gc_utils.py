@@ -110,7 +110,10 @@ def get_peaknames(Peaks_channel1,Peaks_channel2,Peaks_TCD):
 def get_chrom_paths(data_dir,chromatogram_list):
     Paths = []
     for i in range(0,(len(chromatogram_list))):
-        Paths.append(os.path.normpath(data_dir+'/chromatograms/' + chromatogram_list[i]))
+        try:
+            Paths.append(os.path.normpath(data_dir+'/chromatograms/' + chromatogram_list[i]))
+        except:
+            Paths.append(os.path.normpath(data_dir+'/Chromatograms/' + chromatogram_list[i]))
     return Paths
 
 def process_chromatograms(Paths,Peaknames,Peaks_channel2,Peaks_TCD,Peaks_channel1):

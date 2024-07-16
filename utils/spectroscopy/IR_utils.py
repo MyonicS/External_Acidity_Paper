@@ -10,8 +10,10 @@ from matplotlib import pyplot as plt
 
 
 def parse_log(exp_path): #loading the log file and converting the time to a datetime object
-    
-    logpath = glob.glob(exp_path + 'log/*.txt')[0]
+    try:
+        logpath = glob.glob(exp_path + 'log/*.txt')[0]
+    except:
+        logpath = glob.glob(exp_path + 'Log/*.txt')[0]
     log = pd.read_csv(logpath, sep='\t', header=1, names=['Date', 'Time', 'OvenSetpoint', 'OvenTemperature'],engine = 'python')
     log['DateTime'] = pd.to_datetime(log['Date'] + ' ' + log['Time'], format='%m/%d/%Y %I:%M:%S %p')
     #adjusting the timezone

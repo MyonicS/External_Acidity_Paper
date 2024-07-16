@@ -7,7 +7,7 @@ The raw data is hosted on the Open Science Foundation repository under DOI:
 ## In Google Collab
 The easiest way to run the notebook is in Google Collab.
 Click the link below and run the notebook.
-<a href="https://colab.research.google.com/github/MyonicS/paper_test/blob/main/example_notebook.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/MyonicS/External_Acidity_Paper/blob/main/Manuscript_Acidity.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 At release the notebook is running python 3.10. 
 Cells at the top of the notebook clone the repository, install packages and download the experimental data to the Collab runtime. Note that these steps can take a couple minutes.  
 

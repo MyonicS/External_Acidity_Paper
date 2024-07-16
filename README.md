@@ -15,7 +15,7 @@ Cells at the top of the notebook clone the repository, install packages and down
 The notebook is optimized to run in Google Collab. When running the notebook locally delete or comment out all code cells before importing of modules. 
 1. Clone the repository:
    ```sh
-   git clone LINK
+   git clone https://github.com/MyonicS/External_Acidity_Paper
    ```
 2. (optional but recommended: Create a new python 3.10 environment)
 3. Install the [spectrochempy library](https://www.spectrochempy.fr/latest/gettingstarted/install/install_win.html) either by following the instruction of the link or by running the command below:
@@ -27,7 +27,7 @@ The notebook is optimized to run in Google Collab. When running the notebook loc
    pip install -r requirements.txt
    ```
 1. Download the experimental data from the OSF repository.
-   You can do this manually by downloading the ZIP file from [here](https://osf.io/dashboard) and unzipping the folder into the repository, or by using the [datahugger](https://github.com/J535D165/datahugger) library
+   You can do this manually by downloading the ZIP file from [here](https://osf.io/pfxh6/) and unzipping the folder into the repository, or by using the [datahugger](https://github.com/J535D165/datahugger) library
 6. Run the notebook in your IDE of choice. We recommend VS code as it allows for interactive plots in-line, which can be enabled using 
    ```python
    %matplotlib widget

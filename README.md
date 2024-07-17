@@ -1,18 +1,18 @@
 # Description
 This repository hosts the companion jupyter notebook for the publication *External Acidity as Performance Descriptor in Polyolefin Cracking using Zeolite-Based Materials* (preprint posted to ChemRxiv under DOI.)
 It provides an executable version of the manuscript generating all figures and analyses from raw experimental data.
-The raw data is hosted on the Open Science Foundation repository under DOI:
+The raw data is hosted on the Open Science Foundation repository under DOI: https://doi.org/10.17605/OSF.IO/PFXH6
 
 # Getting started
-## In Google Collab
-The easiest way to run the notebook is in Google Collab.
+## In Google Colab
+The easiest way to run the notebook is in Google Colab.
 Click the link below and run the notebook.
 <a href="https://colab.research.google.com/github/MyonicS/External_Acidity_Paper/blob/main/Manuscript_Acidity.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 At release the notebook is running python 3.10. 
-Cells at the top of the notebook clone the repository, install packages and download the experimental data to the Collab runtime. Note that these steps can take a couple minutes.  
+Cells at the top of the notebook clone the repository, install packages and download the experimental data to the Colab runtime. Note that these steps can take a couple minutes.  
 
 ## Running the notebook locally
-The notebook is optimized to run in Google Collab. When running the notebook locally delete or comment out all code cells before importing of modules. 
+The notebook is optimized to run in Google Colab. When running the notebook locally delete or comment out all code cells before importing of modules. 
 1. Clone the repository:
    ```sh
    git clone https://github.com/MyonicS/External_Acidity_Paper
@@ -37,7 +37,7 @@ The notebook is optimized to run in Google Collab. When running the notebook loc
 # Citing
 
 When utilizing code or data from this study in an academic publication please cite the following preprint:
-> Sebastian Rejman, *ChemRxiv*
+> S. Rejman *et al.*, *ChemRxiv*, **2024**
 
 # Bugs and Comments
 Feels free to submit bug reports, comments or questions as issues.

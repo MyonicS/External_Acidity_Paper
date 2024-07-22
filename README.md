@@ -1,5 +1,5 @@
 # Description
-This repository hosts the companion jupyter notebook for the publication *External Acidity as Performance Descriptor in Polyolefin Cracking using Zeolite-Based Materials* (preprint posted to ChemRxiv under DOI.)
+This repository hosts the companion jupyter notebook for the publication *External Acidity as Performance Descriptor in Polyolefin Cracking using Zeolite-Based Materials* (preprint posted to ChemRxiv under doi.org/10.26434/chemrxiv-2024-4fq4v)
 It provides an executable version of the manuscript generating all figures and analyses from raw experimental data.
 The raw data is hosted on the Open Science Foundation repository under DOI: https://doi.org/10.17605/OSF.IO/PFXH6
 
@@ -37,7 +37,7 @@ The notebook is optimized to run in Google Colab. When running the notebook loca
 # Citing
 
 When utilizing code or data from this study in an academic publication please cite the following preprint:
-> S. Rejman *et al.*, *ChemRxiv*, **2024**
+> Rejman, S. _et al._ External Acidity as Performance Descriptor in Polyolefin Cracking using Zeolite-Based Materials. _ChemRxiv_ (2024). doi:10.26434/chemrxiv-2024-4fq4v
 
 # Bugs and Comments
 Feels free to submit bug reports, comments or questions as issues.

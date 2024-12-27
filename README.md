@@ -44,6 +44,8 @@ When utilizing code or data from this study in an academic publication please ci
 Alternatively, cite the data itself can be cited as 
 > Rejman, S. et al. Experimental data supporting: ‘External Acidity as Performance Descriptor in Polyolefin Cracking using Zeolite-Based Materials’. OSF http://dx.doi.org/10.17605/OSF.IO/PFXH6TH (2024)
 
+and the code can be cited under
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14563455.svg)](https://doi.org/10.5281/zenodo.14563455)
 
 # Bugs and Comments
 Feels free to submit bug reports, comments or questions as issues.

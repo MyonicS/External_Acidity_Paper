@@ -36,8 +36,12 @@ The notebook is optimized to run in Google Colab. When running the notebook loca
 	
 # Citing
 
-When utilizing code or data from this study in an academic publication please cite the following preprint:
+When utilizing code or data from this study in an academic publication please cite the following preprint
 > Rejman, S. _et al._ External Acidity as Performance Descriptor in Polyolefin Cracking using Zeolite-Based Materials. _ChemRxiv_ (2024). doi:10.26434/chemrxiv-2024-4fq4v
+
+Alternatively, cite the data itself can be cited as 
+> Rejman, S. et al. Experimental data supporting: ‘External Acidity as Performance Descriptor in Polyolefin Cracking using Zeolite-Based Materials’. OSF http://dx.doi.org/10.17605/OSF.IO/PFXH6TH (2024)
+
 
 # Bugs and Comments
 Feels free to submit bug reports, comments or questions as issues.

@@ -3,6 +3,8 @@ This repository hosts the companion jupyter notebook for the publication *Extern
 It provides an executable version of the manuscript generating all figures and analyses from raw experimental data.
 The raw data is hosted on the Open Science Foundation repository under DOI: https://doi.org/10.17605/OSF.IO/PFXH6
 
+Parts of the Python code provided here will be made availible as seperate packages down in the future.
+
 # Getting started
 ## In Google Colab
 The easiest way to run the notebook is in Google Colab.
